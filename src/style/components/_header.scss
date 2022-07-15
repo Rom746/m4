@@ -1,0 +1,248 @@
+.header {
+
+    &__top {}
+
+    &__search {
+        height: 110px;
+        display: flex;
+        align-items: center;
+        background-color: $white;
+        background-size: 100%;
+    }
+
+    &__botttom {}
+}
+
+.menu {
+    height: 46px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__list {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+    }
+
+    &__link {
+        font-weight: 300;
+
+        &:hover {
+            font-weight: 400;
+        }
+    }
+
+    &__info-link {
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 15px;
+            height: 15px;
+            margin-right: 10px;
+        }
+    }
+}
+
+.link-info {
+
+    &__tel {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: 1px;
+
+        &::before {
+            background-image: url('../../assets/icons/phone.svg');
+        }
+    }
+
+    &__city {
+        color: $color--red;
+
+        &::before {
+            background-image: url('../../assets/icons/local.svg');
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            margin-left: 2px;
+
+            background-image: url('../../assets/icons/list-arrow.svg');
+        }
+    }
+
+    &__mail {
+        font-weight: 300;
+        letter-spacing: 0.008em;
+        color: $color--gray;
+
+        &::before {
+            background-image: url('../../assets/icons/mail.svg');
+        }
+    }
+}
+
+.search-menu {
+    display: flex;
+    align-items: center;
+
+    &__logo {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+
+    &__title {
+        max-width: 112px;
+    }
+
+    &__catalog-btn {
+        max-width: 145px;
+        margin: 0 20px;
+
+        &::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background-image: url('../../assets/icons/btn.svg');
+        }
+
+        &:hover {
+            cursor: pointer;
+            filter: brightness(90%);
+        }
+    }
+
+    &__links {
+        padding-left: 42px;
+        display: flex;
+        gap: 36px;
+    }
+}
+
+.link-search {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__inner {
+        width: 20px;
+        height: 20px;
+
+        position: relative;
+
+        &--wishlist {
+            background-image: url('../../assets/icons/star.svg');
+        }
+
+        &--cart {
+            background-image: url('../../assets/icons/shop.svg');
+        }
+    }
+
+    &__amount {
+        min-width: 14px;
+        position: absolute;
+        top: -3px;
+        right: -3px;
+
+        background-color: $color--red;
+
+        border-radius: 50%;
+        border: 2px solid $white;
+
+        font-weight: 600;
+        font-size: 8px;
+        line-height: 10px;
+        text-align: center;
+        letter-spacing: 0.009em;
+        color: $white;
+    }
+
+    &__title {
+        font-weight: 300;
+    }
+}
+
+.form-search {
+    max-width: 546px;
+    width: 100%;
+
+    position: relative;
+
+    &__input {
+
+        width: 100%;
+        padding: 12px 0 12px 48px;
+
+        border: 1px solid $color--border;
+        border-radius: 4px;
+    }
+
+    &__icon {
+        position:absolute;
+        top: 13px;
+        left: 17px;
+
+        width: 16px;
+        height: 16px;
+        background-image: url('../../assets/icons/search.svg');
+    }
+    &__btn {
+        position:absolute;
+        top: 11px;
+        right: 16px;
+
+        width: 20px;
+        height: 20px;
+        background-image: url('../../assets/icons/search-arrow.svg');
+        background-color: $white;
+        cursor: pointer;
+    }
+}
+
+.breadcrumbs {
+
+    &__list {
+        display: flex;
+        gap: 10px;
+    }
+
+    &__item {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        
+        &:not(:last-child) {
+            color: $color--secondary;
+
+            &::after {
+                content: '';
+                width: 6px;
+                height: 6px;
+                display: block;
+                background-image: url('../../assets/icons/link-arrow.svg');
+            }
+
+            &:hover {
+                filter: brightness(50%);
+            }
+        }
+
+        &:last-child {
+            font-weight: 500;
+        }
+    }
+
+    &__link {
+
+    }
+}
