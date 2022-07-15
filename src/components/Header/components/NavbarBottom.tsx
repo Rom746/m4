@@ -17,7 +17,7 @@ const NavbarBottom: FC = () => {
                     </div>
                     <span className='link-search__title'>Избранное</span>
                 </NavLink>
-                <NavLink className="search-menu__link link-search" to={'/'}>
+                <NavLink className="search-menu__link link-search" to={'/cart'}>
                     <div className="link-search__inner link-search__inner--cart">
                         <span className='link-search__amount'>4</span>
                     </div>
