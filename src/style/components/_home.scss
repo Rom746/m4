@@ -1,0 +1,136 @@
+.home {
+
+    // .home__head
+
+    &__head {}
+}
+
+
+.head {
+
+    display: flex;
+    justify-content: space-between;
+
+
+    // .head__left
+
+    &__inner {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+
+    }
+
+    // .head__return-btn
+
+    &__return-btn {
+        width: 26px;
+        height: 26px;
+        background-color: $white;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+
+        &::after {
+            content: '';
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            background-image: url('../../assets/icons/array.svg');
+        }
+    }
+}
+
+.popular {
+    position: relative;
+
+    &__label {
+        display: flex;
+        align-items: center;
+
+        &::after {
+            content: '';
+            width: 16px;
+            height: 16px;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            background-image: url('../../assets/icons/popular.svg');
+        }
+
+    }
+
+    &__input {
+        width: 16px;
+        height: 16px;
+        margin-left: 5px;
+        opacity: 0;
+        position: relative;
+        z-index: 10;
+    }
+
+
+    &__input:checked {
+        opacity: 1;
+
+        .popular__label {
+            opacity: 0;
+        }
+    }
+
+}
+
+.view-mode {
+
+    display: flex;
+    align-items: center;
+    width: 44px;
+    height: 18px;
+    
+    background-color: $white;
+    border-radius: 50px;
+
+    position: relative;
+
+    &__input {
+        opacity: 0;
+    }
+
+    &__current {
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        top: -2px;
+        left: -2px;
+        background-color: $color--red;
+        border-radius: 50%;
+        z-index: 5;
+    }
+
+    &::after,
+    &::before {
+        content: '';
+        width: 12px;
+        height: 12px;
+        display: block;
+        position: absolute;
+        top: 3px;
+        z-index: 10;
+    }
+
+    &::before {
+        left: 3px;
+        background-image: url('../../assets/icons/btn.svg');
+    }
+
+    &::after {
+        right: 6px;
+        background-image: url('../../assets/icons/line-view.svg');
+    }
+}
+
+
