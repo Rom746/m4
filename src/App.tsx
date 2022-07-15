@@ -1,6 +1,6 @@
-import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Empty from "./components/Empty";
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
