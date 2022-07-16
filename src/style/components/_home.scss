@@ -1,11 +1,3 @@
-.home {
-
-    // .home__head
-
-    &__head {}
-}
-
-
 .head {
 
     display: flex;
@@ -90,7 +82,7 @@
     align-items: center;
     width: 44px;
     height: 18px;
-    
+
     background-color: $white;
     border-radius: 50px;
 
@@ -134,3 +126,216 @@
 }
 
 
+.products {
+    display: flex;
+
+    background-color: $white;
+    border-top: 1px solid $color--border;
+    border-left: 1px solid $color--border;
+
+
+    &__inner {
+        width: 100%;
+        // border: 1px solid $color--border;
+    }
+
+    &__aside {
+        max-width: 269px;
+        width: 100%;
+    }
+}
+
+.gosts-filter {
+
+    border-bottom: 1px solid $color--border;
+    border-right: 1px solid $color--border;
+
+    &__list {
+        display: flex;
+        gap: 5px;
+        padding: 17px 15px;
+    }
+
+    &__btn {
+        padding: 10px 12px;
+        background-color: $color--btn-bg;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
+
+.gost-active {
+    background-color: $color--red;
+    color: $white;
+}
+
+
+
+// =====================================
+
+
+.card {
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__item {
+        max-width: 280px;
+        height: 426px;
+        width: 100%;
+        position: relative;
+
+        border-bottom: 1px solid $color--border;
+        border-right: 1px solid $color--border;
+    }
+
+    &__inner {
+
+        padding: 15px 20px 30px 20px;
+        width: 100%;
+        height: 100%;
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        &.--active {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 545px;
+            z-index: 10;
+            box-shadow: 0px 12px 12px 4px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    &__image {
+        text-align: center;
+    }
+
+    &__gost {
+        max-width: 90px;
+        padding: 4px 10px;
+        margin: 30px 0;
+        border-radius: 2px;
+        background-color: $color--red-a;
+
+        font-size: 10px;
+        line-height: 12px;
+        color: $color--red;
+    }
+
+    &__cart {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 15px;
+    }
+
+    &__price {
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+    &__btn-about {
+        margin-top: 15px;
+        background-color: $color--bg;
+        color: $color--primary;
+    }
+
+    &__btn-cart {
+        margin-top: 20px;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-image: url('../../assets/icons/shop-w.svg');
+        }
+    }
+
+    &__wishlist {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: $white;
+        color: $color--secondary;
+        cursor: pointer;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            margin-right: 5px;
+            background-image: url('../../assets/icons/star-gr.svg');
+        }
+    }
+}
+
+.stocks {
+
+    position: absolute;
+    left: 15px;
+    top: 15px;
+
+    display: flex;
+    gap: 5px;
+
+    &.--active {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__item {
+        &::before {
+            padding: 5px 18px;
+            border-radius: 50px;
+            color: $white;
+        }
+    }
+
+    &__item--a {
+        &::before {
+            content: 'Акция';
+            background-color: $color--green;
+        }
+    }
+
+    &__item--d {
+        &::before {
+            content: 'Скидка';
+            background-color: $color--orange;
+        }
+    }
+
+    &__item--o {
+        &::before {
+            content: 'Хит';
+            background-color: $color--pink;
+        }
+    }
+}
+
+.count-card {
+    border: 1px solid $color--border;
+    border-radius: 2px;
+
+    &__inc,
+    &__dec {
+        width: 28px;
+        height: 35px;
+        background-color: $white;
+        cursor: pointer;
+    }
+
+    &__input {
+        width: 52px;
+        border-left: 1px solid $color--border;
+        border-right: 1px solid $color--border;
+        text-align: center;
+    }
+}
