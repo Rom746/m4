@@ -14,7 +14,6 @@ const ProductList: FC<ProductListProps> = ({ products }) => {
                 {products.map(product =>
                     <ProductItem product={product} key={product.id} selectedCard={selectedCard} setSelectedCard={setSelectedCard}/>
                 )}
-                {}
             </ul>
         </div>
     );
