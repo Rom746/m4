@@ -1,17 +1,19 @@
-import React, { FC } from 'react';
+import { ITypesProduct } from 'models/ITypesProduct';
+import React, { FC, useState } from 'react';
 
-import Head from './Head';
-import Product from './Products';
+import Head from './components/Head';
+import Product from './components/Product';
 
 const Home: FC = () => {
+
+    const [priceFilter, setPriceFilter] = useState<number[]>([]);
+    const [typeFilter, setTypeFilter] = useState<ITypesProduct[]>([])
 
     return (
         <main>
             <div className="container">
                 <Head />
-                <div className="inner">
-                    <Product />
-                </div>
+                <Product />
             </div>
         </main>
     );
