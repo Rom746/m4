@@ -1,4 +1,5 @@
 import { ChangeEvent, FC, MouseEvent } from 'react';
+import { validNumber } from 'utils/validate';
 
 interface CardCounterProps {
     count: number;
@@ -14,13 +15,22 @@ const CardCounter: FC<CardCounterProps> = ({count, setCount}) => {
 
     const dec = (event: MouseEvent): void => {
         event.preventDefault();
-        if (count > 0) {
+        if (count > 1) {
             setCount(count - 1);
         }
     }
 
     const change = (event: ChangeEvent<HTMLInputElement>):void => {
-        setCount(Number(event.target.value));
+        
+        // console.log(error)const error = validNumber.test(event.target.value);
+        // if(error) {
+            
+        //     // setCount(1);
+        //     return
+        // }
+        // console.error(error)
+        // // console.log(event.target.value)
+        // setCount(Number(event.target.value));
     }
 
     return (

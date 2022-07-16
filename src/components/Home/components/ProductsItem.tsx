@@ -1,5 +1,8 @@
+import { ICartProduct } from 'models/ICartProduct';
 import { IProduct } from 'models/IProduct';
 import React, { FC, useState } from 'react';
+import { cartSlice } from 'store/reducers/CartSlice';
+import { useAppDispatch } from 'utils/reduxUtils';
 import CardCounter from './CardCounter';
 
 interface ProductItemProps {
@@ -10,14 +13,25 @@ interface ProductItemProps {
 
 const ProductItem: FC<ProductItemProps> = ({ product, selectedCard, setSelectedCard }) => {
 
-    const [count, setCount] = useState<number>(0);
+    const [count, setCount] = useState<number>(1);
+    const {addProductCart} = cartSlice.actions;
+    const dispatch = useAppDispatch();
+
     const active = selectedCard === product.id;
+
     const stocksList = () => {
         return product.stocks.map((stock, index) =>
-            <li key={index} 
-            className={'stocks__item stocks__item--' + stock}
+            <li key={index}
+                className={'stocks__item stocks__item--' + stock}
             ></li>
         );
+    }
+
+    const clickHandler = (event: React.MouseEvent): void => {
+        event.preventDefault();
+        const newProd: ICartProduct = {...product, amount: count};
+        dispatch(addProductCart(newProd));
+        setCount(1);
     }
 
     return (
@@ -40,12 +54,12 @@ const ProductItem: FC<ProductItemProps> = ({ product, selectedCard, setSelectedC
                 {active && (<button className={"card__wishlist"}>В избранное</button>)}
                 {active && (
                     <div className={'card__btns'}>
-                        <button className='card__btn-cart btn'>В корзину</button>
+                        <button
+                            onClick={clickHandler}
+                            className='card__btn-cart btn'>В корзину</button>
                         <button className='card__btn-about btn'>Подробнее</button>
                     </div>
                 )}
-
-
             </div>
         </li>
     );

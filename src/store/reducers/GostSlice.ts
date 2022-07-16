@@ -14,8 +14,8 @@ const initialState: GostState = {
     error: ''
 }
 
-export const gosStlice = createSlice({
-    name: 'product',
+export const gostStlice = createSlice({
+    name: 'gost',
     initialState,
     reducers: {
         addProduct(state, action: PayloadAction<IGost>) {
@@ -24,4 +24,4 @@ export const gosStlice = createSlice({
     }
 });
 
-export default gosStlice.reducer;
+export default gostStlice.reducer;
