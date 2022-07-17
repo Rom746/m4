@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { titleRoutes } from 'utils/titleRoutes';
 
@@ -9,21 +9,21 @@ const Breadcrumbs: FC = () => {
     const crumbItem = (url: string) => {
         return (
             <li className='breadcrumbs__item'>
-                <NavLink to={url} key={url} className='breadcrumbs__link'> 
+                <NavLink to={url} key={url} className='breadcrumbs__link'>
                     {titleRoutes[url]}
                 </NavLink>
             </li>
-        )
+        );
     }
 
     const crumbsList = () => {
         return crumbs.map((crumb, index) => {
             const routeTo = `/${crumbs.slice(0, index + 1).join("/")}`;
             const isLast = index === crumbs.length - 1;
-            return isLast ? (
+            return isLast ?
                 <span key={routeTo}>{titleRoutes[routeTo]}</span>
-            ) : crumbItem(routeTo);
-        })
+                : crumbItem(routeTo);
+        });
     }
     return (
         <nav className='breadcrumbs'>
@@ -31,7 +31,6 @@ const Breadcrumbs: FC = () => {
                 {crumbItem('/')}
                 {crumbsList()}
             </ul>
-
         </nav>
     );
 };

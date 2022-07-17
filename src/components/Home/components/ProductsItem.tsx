@@ -7,13 +7,12 @@ import CardCounter from './CardCounter';
 
 interface ProductItemProps {
     product: IProduct;
-    selectedCard: number | null;
-    setSelectedCard: (value: number | null) => void;
 }
 
-const ProductItem: FC<ProductItemProps> = ({ product, selectedCard, setSelectedCard }) => {
+const ProductItem: FC<ProductItemProps> = ({ product}) => {
 
     const [count, setCount] = useState<number>(1);
+    const [selectedCard, setSelectedCard] = useState<number | null>(null);
     const {addProductCart} = cartSlice.actions;
     const dispatch = useAppDispatch();
 
@@ -34,11 +33,18 @@ const ProductItem: FC<ProductItemProps> = ({ product, selectedCard, setSelectedC
         setCount(1);
     }
 
+    const overHandler = (event: React.MouseEvent): void => {
+        event.preventDefault();
+        if (!active) {
+            setSelectedCard(product.id);
+        }
+    }
+
     return (
         <li className={'card__item'}>
             <div
                 className={"card__inner " + (active ? '--active' : '')}
-                onMouseOver={() => setSelectedCard(product.id)}
+                onMouseOver={overHandler}
                 onMouseLeave={() => setSelectedCard(null)}
             >
                 <ul className={"card__stocks stocks" + (active ? ' --active' : '')}>{stocksList()}</ul>
