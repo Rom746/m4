@@ -140,8 +140,8 @@
     }
 
     &__aside {
-        max-width: 269px;
-        width: 100%;
+        // max-width: 269px;
+        // width: 100%;
     }
 }
 
@@ -149,15 +149,17 @@
 
     border-bottom: 1px solid $color--border;
     border-right: 1px solid $color--border;
+    padding-left: 15px;
 
     &__list {
         display: flex;
         gap: 5px;
-        padding: 17px 15px;
+        align-items: center;
+        height: 59px;
     }
 
     &__btn {
-        padding: 10px 12px;
+        padding: 6px 12px;
         background-color: $color--btn-bg;
         border-radius: 4px;
         cursor: pointer;
@@ -182,7 +184,7 @@
     }
 
     &__item {
-        max-width: 280px;
+        max-width: 281px;
         height: 426px;
         width: 100%;
         position: relative;
@@ -337,5 +339,192 @@
         border-left: 1px solid $color--border;
         border-right: 1px solid $color--border;
         text-align: center;
+    }
+}
+
+.aside {
+    max-width: 269px;
+    width: 100%;
+
+    &__title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        max-width: 268px;
+
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+
+
+
+        &::before {
+            content: '';
+            width: 17px;
+            height: 17px;
+            display: inline-block;
+        }
+    }
+
+    &__btn {
+        width: 100%;
+        height: 60px;
+        padding: 0 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        background-color: $white;
+        border-bottom: 1px solid $color--border;
+        border-right: 1px solid $color--border;
+        cursor: pointer;
+
+        font-family: inherit;
+
+
+        &--active {
+
+            &::after {
+
+                transform: rotate(180deg);
+            }
+        }
+
+        &::after {
+            content: '';
+            width: 14px;
+            height: 14px;
+            display: inline-block;
+            background-image: url('../../assets/icons/aside-array.svg');
+            transition: all .6s;
+        }
+    }
+}
+
+.categories {
+    margin-right: 1px;
+
+    &__title {
+        &::before {
+            background-image: url('../../assets/icons/aside-category.svg');
+        }
+    }
+
+    &__inner {
+        padding: 20px 30px 30px 20px;
+        border-bottom: 1px solid $color--border;
+        border-right: 1px solid $color--border;
+    }
+
+    &__all {
+        margin-top: 20px;
+        background-color: $white;
+        color: $color--red;
+        cursor: pointer;
+
+        &::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            margin-left: 5px;
+            background-image: url('../../assets/icons/list-arrow.svg');
+        }
+    }
+}
+
+.item-category {
+    &:not(:last-child) {
+        padding-bottom: 15px;
+    }
+
+    &__tag {
+        color: $color--secondary;
+    }
+
+    &__count {
+        padding: 2px 6px;
+        margin-left: 5px;
+        background-color: $color--red;
+        border-radius: 50px;
+        color: $white;
+        font-size: 8px;
+        line-height: 10px;
+    }
+}
+
+.filters {
+    &__title {
+        padding: 20px 19px;
+        border-bottom: 1px solid $color--border;
+        border-right: 1px solid $color--border;
+
+        &::before {
+            background-image: url('../../assets/icons/aside-filter.svg');
+        }
+    }
+}
+
+.item-price {
+    padding: 20px;
+    border-bottom: 1px solid $color--border;
+    border-right: 1px solid $color--border;
+
+    &__inputs {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 25px;
+    }
+
+    &__inner {
+        position: relative;
+        width: 108px;
+        height: 35px;
+    }
+
+    &__title {
+        position: absolute;
+        z-index: 10;
+        left: 15px;
+        top: 15px;
+    }
+
+    &__input {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+
+        padding-top: 6px;
+        padding-left: 32px;
+
+        font-size: 15px;
+        line-height: 18px;
+        color: $color--secondary;
+
+        border: 1px solid $color--border;
+        border-radius: 2px;
+    }
+
+    &__dots-list {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 29px;
+    }
+
+    &__dots-item {
+        width: 1px;
+        background-color: $color--border;
+
+        &:nth-child(odd) {
+            height: 5px;
+        }
+
+        &:nth-child(even) {
+            height: 8px;
+        }
     }
 }
