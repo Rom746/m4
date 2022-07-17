@@ -1,18 +1,14 @@
+import { IFilters } from "models/IFilters";
 import { IProduct } from "models/IProduct"
 
-type settingType = {
-    gost?: number | null;
-    price?: {min: number; max: number} | null
-    type?: number | null;
-}
-
-
-
-export const productFilter = (products: IProduct[], s: settingType): IProduct[] => {
+export const productFilter = (products: IProduct[], s: IFilters): IProduct[] => {
 
     let filtered = products.filter(product => product);
-    if (s.gost) {
-        filtered = filtered.filter(product => product.gost.id === s.gost);
+    if (s.gostFilter) {
+        filtered = filtered.filter(product => product.gost.id === s.gostFilter);
+    }
+    if (s.priceFilter.length === 2) {
+        filtered = filtered.filter(product => s.priceFilter[0] <= product.price && product.price <= s.priceFilter[1]);
     }
     return filtered;
 }

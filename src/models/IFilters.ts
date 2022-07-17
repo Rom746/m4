@@ -1,9 +1,7 @@
-import { IGost } from "./IGost";
-import { ITypesProduct } from "./ITypesProduct";
+export interface IFilters extends IFilterGost, IFilterPrice, IFilterType {}
 
-export interface IFilters {
-    price: number[] | null;
-    type: ITypesProduct | null;
-    gost: IGost | null;
-}
+
+export type IFilterGost = { gostFilter: null | number }
+export type IFilterPrice = { priceFilter: number[] }
+export type IFilterType = {   typeFilter: number | null; }
 
