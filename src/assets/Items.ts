@@ -41,7 +41,7 @@ export const product = [
     {
         id: 2,
         title: 'Опора корпусная приварная КП',
-        price: 149,
+        price: 749,
         gost: gosts[1],
         stocks: [],
         image: image,
@@ -53,7 +53,7 @@ export const product = [
     {
         id: 3,
         title: 'Опора корпусная приварная КП 333',
-        price: 149,
+        price: 649,
         gost: gosts[0],
         stocks: [],
         image: image,
@@ -65,7 +65,7 @@ export const product = [
     {
         id: 4,
         title: 'Опора корпусная приварная КП 444',
-        price: 149,
+        price: 549,
         gost: gosts[3],
         stocks: [],
         image: image,
@@ -77,7 +77,7 @@ export const product = [
     {
         id: 5,
         title: 'Опора корпусная приварная КП 555',
-        price: 149,
+        price: 449,
         gost: gosts[3],
         stocks: [],
         image: image,
@@ -85,5 +85,45 @@ export const product = [
             id: 2,
             title: 'string2'
         },
+    }
+]
+
+
+export const categories = [
+    {
+        id: 1,
+        tag: 'Серия 5.904-1 выпуск 1:',
+        title: 'Детали крепления воздуховодов',
+        count: 95
+    },
+    {
+        id: 6,
+        tag: 'Серия 4.903-10 Выпуск 4,5,6: ',
+        title: 'Изделия и детали трубопроводов для тепловых сетей',
+        count: 15
+    },
+    {
+        id: 2,
+        tag: 'Серия 4.900-9 Выпуск 1: ',
+        title: 'Узлы и детали трубопроводов из пластмассовых труб для систем водоснабжения и канализации',
+        count: 247
+    },
+    {
+        id: 3,
+        tag: 'Серия 3.900-9:',
+        title: 'Опорные конструкции и средства крепления трубопроводов',
+        count: 2
+    },
+    {
+        id: 4,
+        tag: 'Л8-508.000 - Л8-524.000: ',
+        title: 'Опоры и подвески трубопроводов Дн<89мм',
+        count: 15
+    },
+    {
+        id: 5,
+        tag: 'Л8-138.000 - Л8-200.000: ',
+        title: 'Опоры и подвески станционных трубопроводов',
+        count: 247
     }
 ]
