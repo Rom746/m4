@@ -1,25 +1,27 @@
-import { IGost } from 'models/IGost';
-import React, { FC } from 'react';
+import { FC } from 'react';
+import { filterGostStlice } from 'store/reducers/FilterGostSlice';
+import { useAppDispatch, useAppSelector } from 'utils/reduxUtils';
 
-interface GostFilterProps {
-    gosts: IGost[];
-    selectedGost: number | null;
-    setSelectedGost: (value: number | null) => void;
-}
+const GostFilter: FC = () => {
 
-const GostFilter: FC<GostFilterProps> = ({ gosts, selectedGost, setSelectedGost }) => {
+    const { gosts } = useAppSelector(state => state.gostReducer);
+    const { gostFilter } = useAppSelector(state => state.filterGostReducer)
+
+    const {setStateGost} = filterGostStlice.actions;
+    const dispatch = useAppDispatch();
 
     const clickHandler = (id: number): void => {
-        setSelectedGost(selectedGost === id ? null : id);
+        dispatch(setStateGost(gostFilter === id ? null : id))
     }
+    console.log('GostFilter')
 
     return (
         <div className="products__gosts gosts-filter ">
             <ul className="gosts-filter__list">
-                {gosts.map((gost) => 
+                {gosts.map((gost) =>
                     <li className='gosts-filter__item' key={gost.id}>
                         <button
-                            className={'gosts-filter__btn ' + (selectedGost === gost.id ? 'gost-active' : '')}
+                            className={'gosts-filter__btn ' + (gostFilter === gost.id ? 'gost-active' : '')}
                             onClick={() => clickHandler(gost.id)}
                         >{gost.title}</button>
                     </li>

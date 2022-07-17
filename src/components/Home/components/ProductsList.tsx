@@ -1,22 +1,27 @@
-import { IProduct } from 'models/IProduct';
-import { FC, useState } from 'react';
+import { FC, useEffect, useRef } from 'react';
+import { productFilter } from 'utils/productsFilter';
+import { useAppSelector } from 'utils/reduxUtils';
 import ProductItem from './ProductsItem';
 
-interface ProductListProps {
-    products: IProduct[];
-}
 
-const ProductList: FC<ProductListProps> = ({ products }) => {
-    const [selectedCard, setSelectedCard] = useState<number | null>(null);
-    return (
+const ProductList: FC = () => {
+
+    console.log('ProductList')
+
+    const { products } = useAppSelector(state => state.productReducer);
+    const { gostFilter } = useAppSelector(state => state.filterGostReducer);
+    const { priceFilter } = useAppSelector(state => state.filterPriceReducer);
+    const productsFiltered = productFilter(products, { gostFilter: gostFilter, priceFilter: priceFilter, typeFilter: null });
+
+    return (productsFiltered.length > 0) ? (
         <div className='products__card card'>
             <ul className="card__list">
-                {products.map(product =>
-                    <ProductItem product={product} key={product.id} selectedCard={selectedCard} setSelectedCard={setSelectedCard}/>
+                {productsFiltered.map(product =>
+                    <ProductItem product={product} key={product.id} />
                 )}
             </ul>
         </div>
-    );
+    ) : <h1 className='error'>Ничего не найдено</h1>
 };
 
 export default ProductList;
