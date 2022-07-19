@@ -20,7 +20,6 @@ const GostFilter: FC = () => {
         
 
     }
-    console.log('GostFilter')
 
     return (
         <div className="products__gosts gosts-filter ">

@@ -62,8 +62,7 @@ const ProductForm: FC = () => {
 
             dispatch(addProduct(product));
 
-            // id.current.value = '';
-            // title.current.value = '';
+            [id, title, gost, price].map(v => v.current.value = '');
             success.current.textContent = 'Продукт добавлен';
         }
     }

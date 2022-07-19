@@ -6,9 +6,7 @@ import TypeFilter from './Filters/TypeFilter';
 
 
 const Filters: FC = () => {
-
-
-
+    
     return (
         <div className='filters'>
             <p className="filters__title aside__title">Фильтры</p>

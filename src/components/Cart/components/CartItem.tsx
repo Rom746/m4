@@ -22,7 +22,6 @@ const CartItem: FC<CartItemProps> = ({ product }) => {
             id: product.id,
             amount: value - count
         }
-        console.log(action)
 
         dispatch(updateAmountProductCart(action));
         setCount(value);

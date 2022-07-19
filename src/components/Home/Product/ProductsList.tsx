@@ -1,12 +1,10 @@
-import { FC, useEffect, useRef } from 'react';
+import { FC } from 'react';
 import { productFilter } from 'utils/productsFilter';
 import { useAppSelector } from 'utils/reduxUtils';
 import ProductItem from './ProductsItem';
 
 
 const ProductList: FC = () => {
-
-    console.log('ProductList')
 
     const { products } = useAppSelector(state => state.productReducer);
     const { gostFilter } = useAppSelector(state => state.filterGostReducer);

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import Breadcrumbs from './components/Breadcrumbs';
 import NavbarBottom from './components/NavbarBottom';
 import NavbarTop from './components/NavbarTop';

@@ -17,7 +17,6 @@ const Categories: FC = () => {
         );
     }
 
-    console.log('Categories')
     return (
         <AsideItem className='categories'>
             <div className="categories__inner">

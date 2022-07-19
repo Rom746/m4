@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, useRef } from 'react';
+import React, { ChangeEvent, FC } from 'react';
 import RangeSlider from './RangeSlider';
 import { useAppDispatch, useAppSelector } from 'utils/reduxUtils';
 import { filterPriceSlice } from 'store/reducers/FilterPriceSlice';

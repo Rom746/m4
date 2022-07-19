@@ -31,6 +31,8 @@ const CartForm: FC = () => {
     const clickHandler = (event: React.MouseEvent): void => {
         event.preventDefault();
 
+        if (products.length === 0) {return}
+
         const errFio = validTest(fio.current as HTMLInputElement, 'string');
         const errTel = validTest(tel.current as HTMLInputElement, 'tel');
         const errMail = validTest(mail.current as HTMLInputElement, 'mail');

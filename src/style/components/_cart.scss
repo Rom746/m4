@@ -153,7 +153,27 @@
 }
 
 
-.form__icon {}
+.form__icon {
+
+    top: 5px;
+
+    &--fio {
+        background-image: url('../../assets/icons/fio.svg');
+    }
+
+    &--tel {
+        background-image: url('../../assets/icons/tel.svg');
+    }
+
+    &--mail {
+        background-image: url('../../assets/icons/email.svg');
+    }
+
+    &--inn {
+        background-image: url('../../assets/icons/inn.svg');
+    }
+
+}
 
 
 .aside-cart {

@@ -1,7 +1,5 @@
 .header {
 
-    &__top {}
-
     &__search {
         height: 110px;
         display: flex;
@@ -9,8 +7,6 @@
         background-color: $white;
         background-size: 100%;
     }
-
-    &__botttom {}
 }
 
 .menu {
@@ -243,9 +239,5 @@
         &:last-child {
             font-weight: 500;
         }
-    }
-
-    &__link {
-
     }
 }
