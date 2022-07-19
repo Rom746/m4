@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { typesItems } from "assets/Items";
 import { ITypesProduct } from "models/ITypesProduct";
 
 interface TypeProductState {
@@ -9,7 +10,7 @@ interface TypeProductState {
 
 
 const initialState: TypeProductState = {
-    types: [],
+    types: typesItems,
     isLoading: false,
     error: ''
 }
@@ -19,7 +20,11 @@ export const typeProductSlice = createSlice({
     initialState,
     reducers: {
         addType(state, action: PayloadAction<ITypesProduct>) {
+
+           if (state.types.find(v => v.id === action.payload.id)) { return }
+
             state.types.push(action.payload);
+
         },
     }
 });

@@ -11,7 +11,11 @@ const ProductList: FC = () => {
     const { products } = useAppSelector(state => state.productReducer);
     const { gostFilter } = useAppSelector(state => state.filterGostReducer);
     const { priceFilter } = useAppSelector(state => state.filterPriceReducer);
-    const productsFiltered = productFilter(products, { gostFilter: gostFilter, priceFilter: priceFilter, typeFilter: null });
+    const { typeFilter } = useAppSelector(state => state.filterTypeReducer);
+
+    const productsFiltered = productFilter(products,
+        { gostFilter: gostFilter, priceFilter: priceFilter, typeFilter: typeFilter }
+    );
 
     return (productsFiltered.length > 0) ? (
         <div className='products__card card'>

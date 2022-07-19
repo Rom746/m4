@@ -5,6 +5,7 @@ import gostReducer from "./reducers/GostSlice";
 import cartReducer from "./reducers/CartSlice";
 import filterGostReducer from "./reducers/FilterGostSlice";
 import filterPriceReducer from "./reducers/FilterPriceSlice";
+import filterTypeReducer from "./reducers/FilterTypeSlice";
 
 const rootReducer = combineReducers({
     productReducer,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
     gostReducer,
     cartReducer,
     filterGostReducer,
-    filterPriceReducer
+    filterPriceReducer,
+    filterTypeReducer
 })
 
 

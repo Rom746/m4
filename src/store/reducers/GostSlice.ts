@@ -18,7 +18,7 @@ export const gostStlice = createSlice({
     name: 'gost',
     initialState,
     reducers: {
-        addProduct(state, action: PayloadAction<IGost>) {
+        addGost(state, action: PayloadAction<IGost>) {
             state.gosts.push(action.payload);
         },
     }

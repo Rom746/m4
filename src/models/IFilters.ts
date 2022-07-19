@@ -1,7 +1,7 @@
 export interface IFilters extends IFilterGost, IFilterPrice, IFilterType {}
 
 
-export type IFilterGost = { gostFilter: null | number }
+export type IFilterGost = { gostFilter: number[] }
 export type IFilterPrice = { priceFilter: number[] }
-export type IFilterType = {   typeFilter: number | null; }
+export type IFilterType = {   typeFilter: number[] }
 

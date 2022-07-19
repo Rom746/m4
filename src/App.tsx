@@ -1,6 +1,8 @@
+import Footer from "components/Footer/Footer";
 import Home from "components/Home/Home";
+import ProductForm from "components/PagesForm/ProductForm";
+import TypeForm from "components/PagesForm/TypeForm";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Empty from "./components/Empty";
 import Header from "./components/Header/Header";
 
 function App() {
@@ -9,11 +11,11 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/type" element={<Empty title='type' />} />
-        <Route path="/product" element={<Empty title='product' />} />
+        <Route path="/type" element={<TypeForm />} />
+        <Route path="/product" element={<ProductForm />} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
-
   );
 }
 

@@ -1,9 +1,12 @@
 import { FC } from 'react';
-import Categories from './components/Categories';
-import Filters from './components/Filters';
-import GostFilter from './components/GostsFilter';
-import Head from './components/Head';
-import ProductList from './components/ProductsList';
+import About from './Foot/About';
+import Categories from './Aside/Categories';
+import Foot from './Foot/Foot';
+import GostFilter from './Product/GostsFilter';
+import Head from './Head/Head';
+import ProductList from './Product/ProductsList';
+import Filters from './Aside/Filters';
+
 
 const Home: FC = () => {
     return (
@@ -20,6 +23,8 @@ const Home: FC = () => {
                         <ProductList/>
                     </div>
                 </section>
+                <Foot />
+                <About/>
             </div>
         </main>
     );
