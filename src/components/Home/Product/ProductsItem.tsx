@@ -9,11 +9,11 @@ interface ProductItemProps {
     product: IProduct;
 }
 
-const ProductItem: FC<ProductItemProps> = ({ product}) => {
+const ProductItem: FC<ProductItemProps> = ({ product }) => {
 
     const [count, setCount] = useState<number>(1);
     const [selectedCard, setSelectedCard] = useState<number | null>(null);
-    const {addProductCart} = cartSlice.actions;
+    const { addProductCart } = cartSlice.actions;
     const dispatch = useAppDispatch();
 
     const active = selectedCard === product.id;
@@ -28,7 +28,11 @@ const ProductItem: FC<ProductItemProps> = ({ product}) => {
 
     const clickHandler = (event: React.MouseEvent): void => {
         event.preventDefault();
-        const newProd: ICartProduct = {...product, amount: count};
+        const newProd: ICartProduct = {
+            ...product,
+            amount: count,
+            sum: count * product.price
+        };
         dispatch(addProductCart(newProd));
         setCount(1);
     }

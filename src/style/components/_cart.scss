@@ -1,0 +1,236 @@
+.cart {
+    width: 100%;
+    height: 100%;
+
+    &__content {
+        display: flex;
+        background-color: $white;
+        border-top: 1px solid $color--border;
+        border-left: 1px solid $color--border;
+    }
+
+    &__catalog {
+        max-width: 830px;
+        width: 100%;
+        border-right: 1px solid $color--border;
+        border-bottom: 1px solid $color--border;
+    }
+
+    &__aside {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid $color--border;
+        border-right: 1px solid $color--border;
+    }
+
+    &__item {}
+
+    &__warn {
+        padding: 21px 20px;
+        color: $color--secondary;
+        display: flex;
+        align-items: center;
+        gap: 11px;
+
+        &::before {
+            content: '';
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            background-image: url('../../assets/icons/warn.svg');
+        }
+    }
+
+    &__clear {
+        padding: 30px 30px 36px 0;
+        display: flex;
+        justify-content: flex-end;
+        border-top: 1px solid $color--border;
+    }
+
+    &__clear-btn {
+        background-color: $white;
+        color: $color--red;
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        cursor: pointer;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background-image: url('../../assets/icons/delete.svg');
+        }
+    }
+}
+
+
+.item-cart {
+
+    height: 141px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-left: 20px;
+    padding-right: 41px;
+
+    border-top: 1px solid $color--border;
+
+
+    &__left {
+        display: flex;
+        align-items: center;
+    }
+
+    &__image {
+        width: 146px;
+
+        & img {
+            max-width: 120px;
+            max-height: 110px;
+        }
+    }
+
+    &__gost {
+
+        padding: 4px 12px;
+        border-radius: 2px;
+        background-color: $color--red-a;
+        display: inline;
+
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 12px;
+        color: $color--red;
+    }
+
+    &__title {
+        padding-top: 7px;
+        max-width: 280px;
+    }
+
+    &__price {
+        padding-top: 12px;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 18px;
+        color: $color--secondary;
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+
+    &__sum-price {
+        padding-right: 10px;
+
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    &__delete {
+        width: 18px;
+        height: 18px;
+
+        background-image: url('../../assets/icons/delete.svg');
+        background-color: $white;
+
+        opacity: .5;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        cursor: pointer;
+    }
+}
+
+
+.form__icon {}
+
+
+.aside-cart {
+
+    &__title {
+        padding: 18px 0 20px 19px;
+        border-bottom: 1px solid $color--border;
+    }
+
+    &__form {
+        border: none;
+    }
+
+    &__btn {
+        &::before {
+            content: '';
+            width: 18px;
+            height: 18px;
+            background-image: url('../../assets/icons/shop-v.svg');
+        }
+    }
+
+    &__sum-price {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 8px;
+        padding-bottom: 21px;
+    }
+
+    &__price {
+        color: $color--red;
+    }
+
+    &__offer {
+        padding: 12px 0px 14px 28px;
+        margin-top: 15px;
+        width: 100%;
+        display: flex;
+        gap: 22px;
+        background-color: $white;
+        border: 1px solid $color--red;
+        border-radius: 4px;
+        cursor: pointer;
+        color: $color--red;
+
+        position: relative;
+
+        & span {
+            max-width: 111px;
+        }
+
+        &::before {
+            content: '';
+            width: 26px;
+            height: 30px;
+            background-color: $color--red-a;
+            border-radius: 2px;
+            background-image: url('../../assets/icons/offer-1.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        &::after {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background-color: $white;
+            border-radius: 50%;
+            background-image: url('../../assets/icons/offer-2.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+
+            position: absolute;
+            top: 30px;
+            left: 43px;
+        }
+    }
+
+
+}

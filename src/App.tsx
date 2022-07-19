@@ -1,3 +1,4 @@
+import Cart from "components/Cart/Cart";
 import Footer from "components/Footer/Footer";
 import Home from "components/Home/Home";
 import ProductForm from "components/PagesForm/ProductForm";
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/type" element={<TypeForm />} />
         <Route path="/product" element={<ProductForm />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       <Footer/>
     </BrowserRouter>

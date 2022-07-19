@@ -1,5 +1,5 @@
 import { IGost } from 'models/IGost';
-import { FC, useRef, useState } from 'react';
+import React, { FC, useRef, useState } from 'react';
 import { gostStlice } from 'store/reducers/GostSlice';
 import { productSlice } from 'store/reducers/ProductSlice';
 import { useAppDispatch, useAppSelector } from 'utils/reduxUtils';
@@ -8,6 +8,7 @@ import FormItemInput from './FormItemInput';
 import FormItemSelect from './FormItemSelect';
 import image from "assets/product/empty.png";
 import { IProduct } from 'models/IProduct';
+import FormItemImage from './FormItemImage';
 
 interface IErrors {
     id: string | boolean;
@@ -23,6 +24,7 @@ const ProductForm: FC = () => {
     const type = useRef<any>();
     const price = useRef<any>();
     const gost = useRef<any>();
+    const img = useRef<any>(image);
     const success = useRef<any>();
     const dispatch = useAppDispatch();
     const { addGost } = gostStlice.actions;
@@ -53,8 +55,8 @@ const ProductForm: FC = () => {
                 title: title.current.value,
                 type: JSON.parse(type.current.value),
                 price: Number(price.current.value),
-                image: image,
-                stocks: getStocks(title.current.value), 
+                image: img.current || image,
+                stocks: getStocks(title.current.value),
                 gost: getGost()
             }
 
@@ -62,7 +64,7 @@ const ProductForm: FC = () => {
 
             // id.current.value = '';
             // title.current.value = '';
-            success.current.textContent = 'Тип добавлен';
+            success.current.textContent = 'Продукт добавлен';
         }
     }
 
@@ -78,8 +80,8 @@ const ProductForm: FC = () => {
     function getStocks(title: string): string[] {
         const stocks: string[] = [];
 
-        [['a','а'], ['o','о'], ['d','д']].map(val => {
-            if(title.indexOf(val[1]) !== -1) {stocks.push(val[0])}
+        [['a', 'а'], ['o', 'о'], ['d', 'д']].map(val => {
+            if (title.indexOf(val[1]) !== -1) { stocks.push(val[0]) }
         })
 
         return stocks;
@@ -90,11 +92,9 @@ const ProductForm: FC = () => {
         success.current.textContent = '';
     }
 
-
     return (
         <section className='page'>
             <div className="container page__wrapper">
-                <h1 className="page__title">Продукты</h1>
                 <form className='form'>
                     <h5 className="form__title">Добавить продукт</h5>
 
@@ -114,11 +114,14 @@ const ProductForm: FC = () => {
                         tag={'type'} placeholder='Тип'
                     />
 
+                    <FormItemImage reference={img} tag={'img'} placeholder='Изображение'/>
+
                     <div className="form__error">
                         {Object.values(errors).map(v =>
                             <p key={Math.random()}>{v}</p>
                         )}
                     </div>
+
                     <p className="form__success" ref={success}></p>
                     <button className='form__btn btn' onClick={clickHandler}>Добавить</button>
                 </form>

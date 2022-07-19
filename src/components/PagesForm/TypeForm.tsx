@@ -43,7 +43,6 @@ const TypeForm: FC = () => {
     return (
         <section className='page'>
             <div className="container page__wrapper">
-                <h1 className="page__title">Типы продуктов</h1>
                 <form className='form'>
                     <h5 className="form__title">Добавить тип</h5>
                     <FormItemInput error={errors.id} inputHandler={inputHandler}

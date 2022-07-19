@@ -27,15 +27,15 @@ export const gosts: IGost[] = [
 export const typesItems = [
     {
         id: 0,
-        title: 'string'
+        title: 'Тип-1'
     },
     {
         id: 1,
-        title: 'string2'
+        title: 'Тип-2'
     },
     {
         id: 2,
-        title: 'string3'
+        title: 'Тип-3'
     }
 ]
 
