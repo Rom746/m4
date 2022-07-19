@@ -1,6 +1,6 @@
 # Верстка страницы 
 
-Демо: [Create React App](https://github.com/facebook/create-react-app).
+Демо: [React App](https://rom746.github.io/hotels-m4/).
 
 ## На главной странице реализовано
 
