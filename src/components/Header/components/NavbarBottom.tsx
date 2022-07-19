@@ -14,13 +14,13 @@ const NavbarBottom: FC = () => {
             <button className="search-menu__catalog-btn btn">Каталог</button>
             <Form />
             <div className="search-menu__links">
-                <NavLink className="search-menu__link link-search" to={'/'}>
+                <NavLink className="search-menu__link link-search" to={'/hotels-m4/'}>
                     <div className="link-search__inner link-search__inner--wishlist">
                         {/* <span className='link-search__amount'></span> */}
                     </div>
                     <span className='link-search__title'>Избранное</span>
                 </NavLink>
-                <NavLink className="search-menu__link link-search" to={'/cart'}>
+                <NavLink className="search-menu__link link-search" to={'/hotels-m4/cart'}>
                     <div className="link-search__inner link-search__inner--cart">
                         {amount > 0 && <span className='link-search__amount'>{amount}</span>}
                     </div>

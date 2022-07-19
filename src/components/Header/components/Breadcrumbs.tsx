@@ -5,6 +5,7 @@ import { titleRoutes } from 'utils/titleRoutes';
 const Breadcrumbs: FC = () => {
     const { pathname } = useLocation();
     const crumbs = pathname.split("/").filter((el) => el);
+   
 
     const crumbItem = (url: string) => {
         return (
@@ -17,8 +18,12 @@ const Breadcrumbs: FC = () => {
     }
 
     const crumbsList = () => {
+
+        console.log(crumbs)
         return crumbs.map((crumb, index) => {
+            if (index === 0) {return}
             const routeTo = `/${crumbs.slice(0, index + 1).join("/")}`;
+            if (routeTo === 'routeTo') {}
             const isLast = index === crumbs.length - 1;
             return isLast ?
                 <span key={routeTo}>{titleRoutes[routeTo]}</span>
@@ -28,7 +33,7 @@ const Breadcrumbs: FC = () => {
     return (
         <nav className='breadcrumbs'>
             <ul className="breadcrumbs__list">
-                {crumbItem('/')}
+                {crumbItem('/hotels-m4/')}
                 {crumbsList()}
             </ul>
         </nav>

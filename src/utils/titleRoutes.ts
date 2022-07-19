@@ -4,9 +4,9 @@ interface routesProps {
 }
 
 export const titleRoutes: routesProps = {
-    '/': 'Главная',
-    '/product': 'Продукты',
-    '/type': 'Типы продуктов',
-    '/cart': 'Корзина',
-    '/product/test': 'Тест'
+    '/hotels-m4/': 'Главная',
+    '/hotels-m4/product': 'Продукты',
+    '/hotels-m4/type': 'Типы продуктов',
+    '/hotels-m4/cart': 'Корзина',
+    '/hotels-m4/product/test': 'Тест'
 }

@@ -11,10 +11,10 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/type" element={<TypeForm />} />
-        <Route path="/product" element={<ProductForm />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/hotels-m4/" element={<Home />} />
+        <Route path="/hotels-m4/type" element={<TypeForm />} />
+        <Route path="/hotels-m4/product" element={<ProductForm />} />
+        <Route path="/hotels-m4/cart" element={<Cart />} />
       </Routes>
       <Footer/>
     </BrowserRouter>
