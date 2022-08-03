@@ -18,8 +18,6 @@ const Breadcrumbs: FC = () => {
     }
 
     const crumbsList = () => {
-
-        console.log(crumbs)
         return crumbs.map((crumb, index) => {
             if (index === 0) {return}
             const routeTo = `/${crumbs.slice(0, index + 1).join("/")}`;
