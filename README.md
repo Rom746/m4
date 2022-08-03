@@ -1,6 +1,6 @@
 # Верстка страницы 
 
-Демо: [React App](https://rom746.github.io/hotels-m4/).
+Демо: [React App](https://rom746.github.io/m4/).
 
 ## На главной странице реализовано
 
