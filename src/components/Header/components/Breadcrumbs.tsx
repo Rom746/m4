@@ -31,7 +31,7 @@ const Breadcrumbs: FC = () => {
     return (
         <nav className='breadcrumbs'>
             <ul className="breadcrumbs__list">
-                {crumbItem('/hotels-m4/')}
+                {crumbItem('/m4/')}
                 {crumbsList()}
             </ul>
         </nav>

@@ -12,9 +12,9 @@ const Footer: FC = () => {
                 <div className="container">
                     <div className="footer__bottom-inner">
                     <div className="footer__social">
-                        <a href="/hotels-m4/" className="footer__link link--w"></a>
-                        <a href="/hotels-m4/" className="footer__link link--t"></a>
-                        <a href="/hotels-m4/" className="footer__link link--v"></a>
+                        <a href="/m4/" className="footer__link link--w"></a>
+                        <a href="/m4/" className="footer__link link--t"></a>
+                        <a href="/m4/" className="footer__link link--v"></a>
                     </div>
                     </div>
                     

@@ -1,7 +1,7 @@
 {
   "name": "r-ts",
   "version": "0.1.0",
-  "homepage": "https://rom746.github.io/hotels-m4/",
+  "homepage": "https://rom746.github.io/m4/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",
